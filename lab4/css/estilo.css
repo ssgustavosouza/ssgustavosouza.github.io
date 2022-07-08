@@ -13,6 +13,7 @@ header {
   background-size: 100%;
 }
 
+
 header h1 {
   margin: 0;
   font-size: 70px;
@@ -28,6 +29,8 @@ header nav ul {
   padding: 0;
 }
 
+
+
 header nav ul li {
   display: inline;
   list-style: none;
@@ -41,6 +44,8 @@ header nav ul li a {
   color: white;
   opacity: 0.5;
 }
+
+
 
 header nav ul li a:hover {
   margin: 0;
@@ -61,6 +66,9 @@ main {
   justify-content: space-between;
   padding: 4vw;
 }
+
+
+
 
 main #left {
   width: 61vw;
@@ -88,6 +96,8 @@ main #right {
   width: 25vw;
 }
 
+
+
 main #right h1 {
   text-transform: uppercase;
   font-size: 25px;
@@ -104,9 +114,12 @@ main #right .bloco {
   align-items: center;
 }
 
+
+
 main #right .bloco img {
   margin-right: 25px;
 }
+
 
 main #right .bloco h4 {
   margin: 0;
@@ -114,11 +127,13 @@ main #right .bloco h4 {
   line-height: 28px;
 }
 
+
 main #right .linha {
   margin-bottom: 25px;
   padding-bottom: 50px;
   border-bottom: rgba(0, 0, 0, 0.1) 3px solid;
 }
+
 
 section {
   display: grid;
@@ -129,6 +144,7 @@ section {
   padding: 4vw;
 }
 
+
 section h2 {
   margin-bottom: 40px;
   text-transform: uppercase;
@@ -138,9 +154,11 @@ section img {
   width: 100%;
 }
 
+
 section h4 {
   line-height: 30px;
 }
+
 
 section button {
   font-size: 16px;
@@ -153,6 +171,7 @@ section button {
   cursor: pointer;
 }
 
+
 footer {
   padding: 4vw;
   display: grid;
@@ -162,15 +181,20 @@ footer {
   color: white;
 }
 
+
+
 footer h2 {
   margin-bottom: 50px;
   text-transform: uppercase;
 }
 
+
 footer h3 {
   padding-bottom: 12px;
   opacity: 0.2;
 }
+
+
 
 footer .linha {
   border-bottom: white 2px solid;
