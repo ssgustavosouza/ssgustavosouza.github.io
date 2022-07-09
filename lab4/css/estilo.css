@@ -9,7 +9,7 @@ header {
   color: white;
   width: 100%;
   height: 27vw;
-  background: url(../lab4-diagramacao2/img/banner.jpg) no-repeat;
+  background: url(/lab4/img/banner.jpg) no-repeat;
   background-size: 100%;
 }
 
