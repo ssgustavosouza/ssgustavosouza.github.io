@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+	  <head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>LAB 10 - Laboratório de Arrays</title>
+	  </head>
+	  <body>
+		<div class="exercicio">
+		  <h1>1: FUNÇÕES NUMÉRICAS</h1>
+		  <hr />
+		  <p>
+			Crie as funções aplicáveis a arrays, de acordo com a Tabela 1. A função
+			sum deve receber um array numérico como parâmetro e retornar a soma de
+			seus elementos. A função sumOdds recebe um array numérico e retorna a
+			soma apenas dos elementos ímpares. A função product recebe um array
+			numérico e retorna o produto de seus elementos.
+		  </p>
+		  <p>Crie o seu array:</p>
+		  <input type="text" placeholder="Digite um número" id="value01" />
+		  <button id="botao01">Adicionar</button>
+		  <button id="botao00">Reset</button>
+		  <p>Array:</p>
+		  <p id="array" class="inline"></p>
+		  <hr />
+		  <p>Funções:</p>
+		  <div class="func">
+			<button id="botao02">sum</button>
+			<p class="inline" id="resp02">Resultado:</p>
+		  </div>
+		  <div class="func">
+			<button id="botao03">sumOdds</button>
+			<p class="inline" id="resp03">Resultado:</p>
+		  </div>
+		  <div class="func">
+			<button id="botao04">product</button>
+			<p class="inline" id="resp04">Resultado:</p>
+		  </div>
+		</div>
+		<div class="exercicio">
+		  <h1>2: NÚMEROS PRIMOS</h1>
+		  <hr />
+		  <p>
+			Na matemática um número é considerado primo se ele possuir apenas dois
+			divisores, o número um e ele mesmo.Para ajudar a gerar uma série de n
+			números primos, crie uma função que ao receber o tamanho n retorne a
+			respectiva série de números primos, por exemplo, ao receber o valor 4 o
+			retorno será 2, 3, 5, 7. Contudo, se for recebido dois valores a
+			interpretação será que a série deverá compreender o intervalo desses
+			valores, portanto, os valores 2, 10 resultaram em 2, 3, 5, 7.
+		  </p>
+		  <p>Crie o seu array (máximo 2 números, conforme as instruções acima):</p>
+		  <input type="text" placeholder="Digite um número" id="value02" />
+		  <button id="botao05">Adicionar</button>
+		  <button id="botao06">Reset</button>
+		  <p>Array:</p>
+		  <p id="array2" class="inline"></p>
+		  <hr />
+		  <p>Funções:</p>
+		  <div class="func">
+			<button id="botao07">primo</button>
+			<p class="inline" id="resp05">Resultado:</p>
+		  </div>
+		</div>
+
+
+
+
+		<script>
+		  const botao0 = document.querySelector("#botao00");
+		  const botao = document.querySelector("#botao01");
+		  const botao2 = document.querySelector("#botao02");
+		  const botao3 = document.querySelector("#botao03");
+		  const botao4 = document.querySelector("#botao04");
+		  const botao5 = document.querySelector("#botao05");
+		  const botao6 = document.querySelector("#botao06");
+		  const botao7 = document.querySelector("#botao07");
+
+
+		  let array1 = [];
+		  document.querySelector("#array").innerHTML = "[]";
+		  let array2 = [];
+		  document.querySelector("#array2").innerHTML = "[]";
+
+
+		  const getValor = () =>
+			parseFloat(document.querySelector("#value01").value) || 0;
+		  const getValor2 = () =>
+			parseFloat(document.querySelector("#value02").value) || 0;
+		  const getValor3 = () =>
+			parseFloat(document.querySelector("#value03").value) || 0;
+
+
+		  const reset = () => {
+			document.querySelector("#array").innerHTML = "[]";
+			array1 = [];
+		  };
+		  const reset2 = () => {
+			document.querySelector("#array2").innerHTML = "[]";
+			array2 = [];
+		  };
+
+
+		  const sum = (array) => {
+			let soma = 0;
+			for (i = 0; i < array.length; i++) {
+			  soma += array[i];
+			}
+			document.querySelector("#resp02").innerHTML = "Resultado: " + soma;
+
+
+			return soma;
+		  };
+
+		  const sumOdds = (array) => {
+			let soma = 0;
+			for (i = 0; i < array.length; i++) {
+			  if (array[i] % 2 != 0) {
+				soma += array[i];
+			  }
+			}
+			document.querySelector("#resp03").innerHTML = "Resultado: " + soma;
+
+			return soma;
+		  };
+
+
+		  const product = (array) => {
+			let produto = 1;
+			for (i = 0; i < array.length; i++) {
+			  produto *= array[i];
+			}
+			if (array.length > 0) {
+			  document.querySelector("#resp04").innerHTML = "Resultado: " + produto;
+			  return produto;
+			} else {
+			  document.querySelector("#resp04").innerHTML = "Resultado: " + 0;
+			  return 0;
+			}
+		  };
+
+
+		  const primo = (array) => {
+			let primos = [];
+			if (array.length == 1) {
+			  for (i = 2; primos.length < array[0]; i++) {
+				a = 0;
+				for (j = 1; j <= i; j++) {
+				  if (i % j == 0) {
+					a++;
+				  }
+				}
+				if (a == 2) {
+				  primos[primos.length] = i;
+				}
+				document.querySelector("#resp05").innerHTML =
+				  "Resultado: " + primos;
+			  }
+			} else {
+			  for (i = array[0]; i <= array[1]; i++) {
+				a = 0;
+				for (j = 1; j <= i; j++) {
+				  if (i % j == 0) {
+					a++;
+				  }
+				}
+				if (a == 2) {
+				  primos[primos.length] = i;
+				}
+				document.querySelector("#resp05").innerHTML =
+				  "Resultado: " + primos;
+			  }
+			}
+		  };
+
+		  botao0.addEventListener("click", () => {
+			reset();
+		  });
+		  botao6.addEventListener("click", () => {
+			reset2();
+		  });
+
+		  botao.addEventListener("click", () => {
+			const valor = getValor();
+			array1[array1.length] = valor;
+			document.querySelector("#value01").value = "";
+			document.querySelector("#array").innerHTML = "[" + array1 + "]";
+		  });
+		  botao5.addEventListener("click", () => {
+			const valor = getValor2();
+			if (array2.length <= 1) {
+			  array2[array2.length] = valor;
+			} else {
+			  window.alert("Somente 2 números no array.");
+			}
+			document.querySelector("#value02").value = "";
+			document.querySelector("#resp05").innerHTML = "Resultado: ";
+			document.querySelector("#array2").innerHTML = "[" + array2 + "]";
+		  });
+
+		  botao2.addEventListener("click", () => {
+			sum(array1);
+		  });
+		  botao3.addEventListener("click", () => {
+			sumOdds(array1);
+		  });
+		  botao4.addEventListener("click", () => {
+			product(array1);
+		  });
+		  botao7.addEventListener("click", () => {
+			primo(array2);
+		  });
+		</script>
+	  </body>
+	</html>
+
+
+
+	<style>
+	  body {
+		width: 900px;
+		margin: auto;
+	  }
+
+
+
+	  p {
+		text-align: justify;
+	  }
+
+
+
+	  .exercicio {
+		border: 1px solid black;
+		padding: 0px 20px 20px 20px;
+		border-radius: 10px;
+		margin-bottom: 10px;
+	  }
+
+
+
+	  h1 {
+		text-align: center;
+	  }
+
+
+
+	  .inline {
+		display: inline;
+	  }
+
+
+
+	  .func {
+		margin: 10px;
+	  }
+</style>
